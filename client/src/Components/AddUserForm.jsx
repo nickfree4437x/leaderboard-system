@@ -17,7 +17,7 @@ const AddUserForm = ({ onUserAdded }) => {
 
     setIsSubmitting(true);
     try {
-      await axios.post("http://localhost:5000/api/users", { name });
+      await axios.post("https://leaderboard-system-7ik6.onrender.com/api/users", { name });
       setName("");
       onUserAdded();
       toast.success('User added successfully!');
