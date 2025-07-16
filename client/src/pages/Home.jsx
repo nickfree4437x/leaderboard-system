@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { BsClockHistory } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import UserDropdown from "../components/UserDropdown";
-import ClaimButton from "../components/ClaimButton";
-import Leaderboard from "../components/Leaderboard";
-import AddUserForm from "../components/AddUserForm";
+import UserDropdown from "../Components/UserDropdown";
+import ClaimButton from "../Components/ClaimButton";
+import Leaderboard from "../Components/Leaderboard";
+import AddUserForm from "../Components/AddUserForm";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
