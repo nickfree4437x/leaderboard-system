@@ -14,7 +14,7 @@ const ClaimHistory = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/claim-history");
+        const res = await axios.get("https://leaderboard-system-7ik6.onrender.com/api/claim-history");
         setHistory(res.data);
       } catch (err) {
         console.error("Error fetching history:", err);
