@@ -17,7 +17,7 @@ const Home = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users");
+      const res = await axios.get("https://leaderboard-system-7ik6.onrender.com/api/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Error fetching users", err);
@@ -32,7 +32,7 @@ const Home = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post(`http://localhost:5000/api/claim/${selectedUserId}`);
+      const res = await axios.post(`https://leaderboard-system-7ik6.onrender.com/api/claim/${selectedUserId}`);
       const points = res.data.pointsClaimed;
       setPointsEarned(points);
       toast.success(`🎉 ${points} points claimed successfully!`);
