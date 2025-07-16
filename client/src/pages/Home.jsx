@@ -50,7 +50,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-3 sm:p-4 md:p-6 flex flex-col">
       <ToastContainer 
         position="top-center"
         autoClose={3000}
@@ -64,42 +64,44 @@ const Home = () => {
         theme="light"
       />
 
-      <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden w-full">
+      <div className="max-w-2xl mx-auto w-full bg-white rounded-xl shadow-md overflow-hidden">
         {/* Header Section */}
-        <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-5 sm:p-6 text-white">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-4 sm:p-5 md:p-6 text-white">
+          <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center gap-3 sm:gap-4">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold">🏆 Leaderboard System</h1>
-              <p className="text-amber-100 text-sm mt-1">Track and claim points</p>
+              <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold">🏆 Leaderboard System</h1>
+              <p className="text-amber-100 text-xs sm:text-sm mt-1">Track and claim points</p>
             </div>
             <Link
               to="/claim-history"
-              className="flex items-center no-underline gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors text-white text-sm sm:text-base"
+              className="flex items-center no-underline gap-2 bg-white/20 hover:bg-white/30 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition-colors text-white text-xs sm:text-sm md:text-base"
             >
+              <BsClockHistory className="text-sm sm:text-base" />
               <span>Claim History</span>
             </Link>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="p-4 sm:p-6 space-y-6">
+        <div className="p-3 sm:p-4 md:p-6 space-y-4 sm:space-y-5 md:space-y-6">
           {/* Claim Points Section */}
-          <div className="bg-amber-50 rounded-lg p-4 sm:p-6 border border-amber-100">
-            <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-end">
-              <div className="flex-1">
+          <div className="bg-amber-50 rounded-lg p-3 sm:p-4 md:p-6 border border-amber-100">
+            <h2 className="text-base sm:text-lg md:text-xl font-semibold text-amber-800 mb-3 sm:mb-4">Claim Points</h2>
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 items-stretch">
+              <div className="flex-1 min-w-0">
                 <UserDropdown
                   users={users}
                   selectedUserId={selectedUserId}
                   setSelectedUserId={setSelectedUserId}
                 />
               </div>
-              <div className="w-full sm:w-auto">
+              <div className="xs:w-auto flex justify-center">
                 <ClaimButton onClaim={handleClaim} loading={loading} />
               </div>
             </div>
 
             {pointsEarned !== null && (
-              <p className="mt-4 text-center text-green-600 font-medium">
+              <p className="mt-3 sm:mt-4 text-center text-green-600 font-medium text-sm sm:text-base">
                 🎯 You earned {pointsEarned} points!
               </p>
             )}
